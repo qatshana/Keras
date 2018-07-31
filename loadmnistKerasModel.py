@@ -1,3 +1,9 @@
+'''
+Program to load Deep Network (CNN) Keras mode and evaluation performance
+Training Set Data        ---  60000 images of digits with 28,28,1 dimensions 
+Training Labels          ---  digits between 0 through 9
+
+'''
 import numpy as np
 from keras import layers
 from keras.layers import Input, Dense, Activation, ZeroPadding2D, BatchNormalization, Flatten, Conv2D
