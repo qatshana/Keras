@@ -112,8 +112,25 @@ mnistModel = mnistModel((28,28,1))
 
 mnistModel.compile(optimizer = "adam", loss = "categorical_crossentropy", metrics = ["accuracy"])
 
-
 # Train Model
 
 mnistModel.fit(x =X_train, y = y_train, batch_size=16, epochs=40)
 
+# Evaluate Model
+
+scores = mnistModel.evaluate(X_test, y_test, verbose=1)
+print("%s: %.2f%%" % (mnistModel.metrics_names[0], scores[0]*100))
+print("%s: %.2f%%" % (mnistModel.metrics_names[1], scores[1]*100))
+
+# show model compoenets
+mnistModel.summary()
+
+
+
+# serialize model to JSON
+model_json = mnistModel.to_json()
+with open("model.json", "w") as json_file:
+    json_file.write(model_json)
+# serialize weights to HDF5
+mnistModel.save_weights("model.h5")
+print("Saved model to disk")
