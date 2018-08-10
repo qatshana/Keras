@@ -4,7 +4,7 @@ This repo domestrate how to use Keras on MNIST using flat deep neural network an
 
 # Flat DNN Performance
 
-Layer (type)                 Output Shape              Param #   
+Layer (type)                 Output Shape              Param    
 =================================================================
 dense_1 (Dense)              (None, 256)               200960    
 _________________________________________________________________
